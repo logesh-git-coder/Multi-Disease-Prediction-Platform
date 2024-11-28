@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiple Disease Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .fa-linkedin{
+            color:#0072b1;
+        }
+        .fa-github{
+            color: rgb(31, 11, 51)
+        }
+    </style>
+
+</head>
+<body>
+    <div class="navbar">
+        <h3>PredictCare</h3>
+        <div class="nav-links">
+            <a href="#"></a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <img src="{{ url_for('static', filename='images/heart.jpg') }}" style="width:100%">
+                <div class="text-overlay">
+                    <h3>Know Your Heart's Health</h3>
+                    <p>Our heart disease prediction tool uses advanced algorithms to analyze your health data, helping you understand your risk level.</p>
+                    <a href=/index1 class="btn red-btn">Chech your Heart</a>
+                </div>
+            </div>
+
+            <div class="mySlides fade">
+                <img src="{{ url_for('static', filename='images/st1.jpg') }}" style="width:100%">
+                <div class="text-overlay">
+                    <h3>Stroke Predictor</h3>
+                    <p>Assess your risk of stroke with a simple, accurate analysis.This helps identify your risk level and guide preventive actions.</p>
+                    <a href=/stroke class="btn red-btn">Stroke Risk Checker</a>
+                </div>
+            </div>
+
+            <div class="mySlides fade">
+                <img src="{{ url_for('static', filename='images/lung-.jpg') }}" style="width:100%">
+                <div class="text-overlay">
+                    <h3>Lung Health Analyzer</h3>
+                    <p>Detect lung cancer early with our advanced prediction tool.
+Using cutting-edge technology, we help you assess your risk and take proactive steps for your lung health.</p>
+                    <a href="/lung" class="btn red-btn">Lung Cancer Risk Checker</a>
+                </div>
+            </div>
+
+            <!-- Next and previous buttons -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        
+        <!-- Dots/circles for navigation -->
+        <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span> 
+            <span class="dot" onclick="currentSlide(2)"></span> 
+            <span class="dot" onclick="currentSlide(3)"></span> 
+        </div>
+    </div>
+    <section class="about-us">
+        <div class="con">
+            <h1>About Us</h1>
+            <p>
+                Welcome to <strong>PredictCare</strong>, a platform dedicated to empowering individuals with insights into their health. Our website provides advanced predictive tools for three critical health conditions: heart disease, stroke, and lung cancer. Using state-of-the-art algorithms and data analysis, we aim to help users assess their risk factors early, allowing for proactive measures and timely interventions.
+            </p>
+            <p>
+                Our mission is to bridge the gap between complex medical data and user-friendly insights, making it easier for everyone to understand their health risks. We prioritize accuracy, privacy, and ease of use, giving users confidence in taking the first step towards better health management.
+            </p>
+            <p>
+                Take charge of your health today with our cutting-edge prediction tools, designed to offer you the clarity and foresight you need for a healthier tomorrow.
+            </p>
+            <p>Explore our website, and let us assist you on your wellness journey.</p>
+        </div>
+    </section>
+    <div class="prohead">
+        <h2>Meet the Developers</h2>
+    </div>
+
+    <div class="main">
+        <div class="card">
+            <div class="card-img">
+                <img src="{{ url_for('static', filename='images/pic.jpg') }}" alt="Profile image">
+            </div>
+            <p class="name">Logesh V</p>
+            <p>Student at Sathyabama University</p>
+            <p>AI & ML Engineer | Web Developer </p>
+            <p>Coding is not my Profession, it's my passion.I'm excited to bring creativity and technical expertise to every project we tackle. </p>
+            <div class="social">
+                <a href="https://www.linkedin.com/in/logesh-v-54630728b?utm_source=share&utm_campaign=share_via&ut-m_content=profile&utm_medium=ios_app" target="_blank">
+                   <button class="linked"><i class="fa-brands fa-linkedin"></i></button>
+                </a>
+                <a href="https://github.com/logesh-git-coder">
+                   <button class="git"><i class="fa-brands fa-github"></i></button>
+                </a>
+             </div> 
+        </div>
+        <div class="card">
+            <div class="card-img">
+                <img src="{{ url_for('static', filename='images/pic1.jpg') }}" alt="Profile image">
+            </div>
+            <p class="name">Kasthuri Raja</p>
+            <p>Student at Sathyabama University</p>
+            <p>AI Developer</p>
+            <p>Coding is my art, and each line is a brushstroke that creates something extraordinary.</p>
+            <div class="social">
+                <a href="https://www.linkedin.com/in/gaming-hyper-0a740628b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank">
+                   <button class ="linked"><i class="fa-brands fa-linkedin"></i></button>
+                </a>
+                <a href="">
+                   <button class="git"><i class="fa-brands fa-github"></i></button>
+                </a>
+             </div> 
+        </div>
+    </div> 
+    <script src="{{ url_for('static', filename='scr.js') }}"></script>
+</body>
+</html>

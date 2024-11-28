@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stroke Risk Prediction Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles3.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Stroke Risk Prediction</h1>
+        <form id="strokeForm" action="/predict_stroke" method="post">
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender" required>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" min="0" placeholder="e.g., 45" required>
+
+            <label for="hypertension">Hypertension:</label>
+            <select id="hypertension" name="hypertension" required>
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select>
+
+            <label for="heartDisease">Heart Disease:</label>
+            <select id="heartDisease" name="heartDisease" required>
+                <option value="0">No</option>
+                <option value="1">Yes</option>
+            </select>
+
+            <label for="everMarried">Ever Married:</label>
+            <select id="everMarried" name="everMarried" required>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+
+            <label for="workType">Work Type:</label>
+            <select id="workType" name="workType" required>
+                <option value="children">Children</option>
+                <option value="Govt_job">Government Job</option>
+                <option value="Never_worked">Never Worked</option>
+                <option value="Private">Private</option>
+                <option value="Self-employed">Self-employed</option>
+            </select>
+
+            <label for="residenceType">Residence Type:</label>
+            <select id="residenceType" name="residenceType" required>
+                <option value="Urban">Urban</option>
+                <option value="Rural">Rural</option>
+            </select>
+
+            <label for="avgGlucoseLevel">Average Glucose Level:</label>
+            <input type="number" id="avgGlucoseLevel" name="avgGlucoseLevel" step="0.1" min="0" placeholder="e.g., 85.2" required>
+
+            <label for="bmi">BMI:</label>
+            <input type="number" id="bmi" name="bmi" step="0.1" min="0" placeholder="e.g., 25.4" required>
+
+            <label for="smokingStatus">Smoking Status:</label>
+            <select id="smokingStatus" name="smokingStatus" required>
+                <option value="formerly smoked">Formerly Smoked</option>
+                <option value="never smoked">Never Smoked</option>
+                <option value="smokes">Smokes</option>
+                <option value="Unknown">Unknown</option>
+            </select>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

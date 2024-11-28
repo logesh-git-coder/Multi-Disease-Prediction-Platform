@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='st.css') }}">
+    <title>Heart Disease Prediction Result</title>
+    <style>
+         html, body{
+            height: 100%;
+            margin: 0;
+        }
+        .backgroundimage{
+            background-image: url("{{ url_for('static',filename='images/heart1.jpg')}}");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="backgroundimage">
+        <div class="container">
+            <h1>Heart Disease Prediction Result</h1>
+            <p>{{ result }}</p>
+            <a href="/" class="check" >Check Another Prediction</a>
+        </div>
+    </div>
+</body>
+</html>

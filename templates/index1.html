@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Disease Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles3.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Heart Disease Prediction</h1>
+        <form id="prediction-form" action="/predict_heart" method="post" enctype="multipart/form-data">
+            <div class="input-method-container">
+                <label class="radio-left">
+                    <input type="radio" name="input_method" value="file" id="fileOption" onclick="toggleInputMethod()" required> Upload File
+                </label>
+                <label class="radio-right">
+                    <input type="radio" name="input_method" value="form" id="formOption" onclick="toggleInputMethod()" required> Use Web Form
+                </label>
+            </div>
+            <div id="fileInput" style="display:none;">
+                <label for="file">Upload CSV/Excel File:</label>
+                <input type="file" name="file" accept=".csv, .xlsx"><br>
+            </div>
+
+            <div id="formInput" style="display:none;">
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" required><br>
+
+                <label for="sex">Sex:</label>
+                <select id="sex" name="sex">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select><br>
+
+                <label for="cp">Chest Pain Type:</label>
+                <select id="cp" name="cp">
+                    <option value="typical angina">Typical Angina</option>
+                    <option value="atypical angina">Atypical Angina</option>
+                    <option value="non-anginal pain">Non-Anginal Pain</option>
+                    <option value="asymptomatic">Asymptomatic</option>
+                </select><br>
+
+                <label for="trestbps">Resting Blood Pressure:</label>
+                <input type="number" id="trestbps" name="trestbps" required><br>
+
+                <label for="chol">Serum Cholesterol (mg/dl):</label>
+                <input type="number" id="chol" name="chol" required><br>
+
+                <label for="fbs">Fasting Blood Sugar (> 120 mg/dl):</label>
+                <input type="number" id="fbs" name="fbs" required><br>
+
+                <label for="restecg">Resting Electrocardiographic Results:</label>
+                <select id="restecg" name="restecg">
+                    <option value="normal">Normal</option>
+                    <option value="st-t wave abnormality">ST-T Wave Abnormality</option>
+                    <option value="left ventricular hypertrophy">Left Ventricular Hypertrophy</option>
+                </select><br>
+
+                <label for="thalach">Maximum Heart Rate Achieved:</label>
+                <input type="number" id="thalach" name="thalach" required><br>
+
+                <label for="exang">Exercise Induced Angina:</label>
+                <select id="exang" name="exang">
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select><br>
+
+                <label for="oldpeak">ST Depression Induced by Exercise Relative to Rest:</label>
+                <input type="number" id="oldpeak" name="oldpeak" step="0.1" required><br>
+
+                <label for="slope">Slope of the Peak Exercise ST Segment:</label>
+                <select id="slope" name="slope">
+                    <option value="upsloping">Upsloping</option>
+                    <option value="flat">Flat</option>
+                    <option value="downsloping">Downsloping</option>
+                </select><br>
+
+                <label for="ca">Number of Major Vessels Colored by Fluoroscopy:</label>
+                <input type="number" id="ca" name="ca" required><br>
+
+                <label for="thal">Thalassemia:</label>
+                <select id="thal" name="thal">
+                    <option value="normal">Normal</option>
+                    <option value="fixed defect">Fixed Defect</option>
+                    <option value="reversible defect">Reversible Defect</option>
+                </select><br>
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function toggleInputMethod() {
+            var fileOption = document.getElementById('fileOption').checked;
+            var formOption = document.getElementById('formOption').checked;
+            var formFields = document.querySelectorAll('#formInput input, #formInput select');
+            if (fileOption) {
+                document.getElementById('fileInput').style.display = 'block';
+                document.getElementById('formInput').style.display = 'none';
+                formFields.forEach(function(field) {
+                    field.removeAttribute('required');
+                });
+            }
+            else if (formOption) {
+                document.getElementById('fileInput').style.display = 'none';
+                document.getElementById('formInput').style.display = 'block';
+                formFields.forEach(function(field) {
+                    field.setAttribute('required', 'true');
+                });
+            }
+        }
+
+
+    </script>
+</body>
+</html>
