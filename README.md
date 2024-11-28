@@ -52,7 +52,7 @@
 
 <h2>Project Demo</h2>
 <p>Check out the demo video:</p>
-<a href="https://your-demo-link.com" target="_blank"><img src="https://img.shields.io/badge/Watch%20Demo%20Video-00A1D9?style=for-the-badge&logo=video&logoColor=white" alt="Demo Video"></a>
+<a href="https://www.instagram.com/reel/DC6nQbJz3Mf/?igsh=MTNkMm1lZmlhOHh5bw==" target="_blank"><img src="https://img.shields.io/badge/Watch%20Demo%20Video-00A1D9?style=for-the-badge&logo=video&logoColor=white" alt="Demo Video"></a>
 
 <h2>Contact</h2>
 <p>For questions or feedback, feel free to reach out:</p>
